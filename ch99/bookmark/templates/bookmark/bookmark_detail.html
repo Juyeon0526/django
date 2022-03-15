@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}bookmark_detail.html{% endblock %}
+{% block content %}
+
+    <h1>{{ object.title }}</h1>
+    <ul>
+    <li>URL: <a href="{{ object.url }}">{{ object.url }}</a></li>
+    </ul>
+
+    <br>
+    <div>
+        <b>TAGS</b> <I class="fas fa-tag"></i>
+        {% load taggit_templatetags2_tags %}
+        {% get_tags_for_object object as "tags" %}
+        {% for tag in tags %}
+        <a href="{% url 'bookmark:tagged_object_list' tag.name %}">{{tag.name}}</a>
+        {% endfor %}
+        &emsp;
+        <a href="{% url 'bookmark:tag_cloud' %}"> <span class="btn btn-info btn-sm">TagCloud</span> </a>
+    </div>
+
+{% endblock %}

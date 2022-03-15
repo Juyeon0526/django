@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}student_detail.html{% endblock %}
+{% block content %}
+
+    <h1>{{ object.name }}</h1>
+
+    <ul>
+        <li>이름 : <a href="{{ object.name }}">{{ object.name }}</a></li>
+        <li>학번 : <a href="{{ object.studentnum }}">{{ object.studentnum }}</a></li>
+        <li>전화번호 : <a href="{{ object.tel }}">{{ object.tel }}</a></li>
+        <li>이메일 : <a href="{{ object.email }}">{{ object.email }}</a></li>
+        <li>강의 : <a href="{{ object.lecture }}">{{ object.lecture }}</a></li>
+        <li>교수 : <a href="{{ object.professor }}">{{ object.professor }}</a></li>
+    </ul>
+{% endblock %}

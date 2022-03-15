@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}namecard_tbl_list.html{% endblock %}
+{% block content %}
+
+    <h1>Namecard List</h1>
+
+    <ul>
+        {% for namecard in object_list %}
+            <li><a href="{% url 'namecarddetail' namecard.id %}">{{ namecard }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
